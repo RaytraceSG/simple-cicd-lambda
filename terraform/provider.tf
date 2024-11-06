@@ -6,7 +6,7 @@ terraform {
     }
 
     archive = {
-      source = "hashicorp/data"
+      source = "hashicorp/archive"
       version = "~> 2.6"
     }
   }
