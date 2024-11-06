@@ -5,7 +5,6 @@ on:
     branches: ["main"]
     paths:
       - "terraform/*"
-      - "files/*"
 
 jobs:
   Checkov:
@@ -21,4 +20,4 @@ jobs:
       - name: Checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          framework: terraform,all
+          framework: terraform
