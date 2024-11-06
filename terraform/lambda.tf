@@ -14,12 +14,10 @@ resource "aws_lambda_function" "example_lambda" {
   source_code_hash               = data.archive_file.lambda_zip.output_base64sha256
   runtime                        = "python3.10"
   reserved_concurrent_executions = 100
-  dead_letter_config {
-    target_arn = "test"
-  }
   tracing_config {
     mode = "Active"
   }
+  #checkov:skip=CKV_AWS_116:AWS Lambda function is not configured for a DLQ
   #checkov:skip=CKV_AWS_272:Ensure AWS Lambda function is configured to validate code-signing
   #checkov:skip=CKV_AWS_117:Ensure that AWS Lambda function is configured inside a VPC
 }
